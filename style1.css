@@ -13,8 +13,9 @@ body {
 }
 
 h1 {
-    margin: 30px auto 50px;
-    padding: 0;
+    margin: 90px auto 50px;
+    padding: 40px 10px;
+    gap: 20px;
     max-width: 1000px;
     font-size: clamp(2.2rem, 8vw, 7.5rem);
     line-height: 1.15;
@@ -22,6 +23,7 @@ h1 {
 
 h1 i {
     font-size: clamp(2.8rem, 10vw, 9rem);
+    margin: 20px 0 0;
 }
 
 #auth {
@@ -36,6 +38,7 @@ h1 i {
 #auth h1 {
     margin: 0 0 20px;
     font-size: clamp(2rem, 6vw, 5rem);
+    gap: 20px;
 }
 
 #auth label {
@@ -71,7 +74,7 @@ input[type="checkbox"] {
 #mdp input[type="text"] {
     width: min(90%, 700px);
     height: clamp(60px, 10vw, 120px);
-    margin: 0;
+    margin: 30px 10px 20px;
     padding: 10px 20px;
     border: 4px solid #7282c6;
     border-radius: 70px;
@@ -112,7 +115,7 @@ button[type="submit"]:hover {
 
 #bayo p {
     margin: 50px 0;
-    padding: 0;
+    padding: 30px 20px;
     font-size: clamp(2.5rem, 10vw, 10rem);
 }
 
