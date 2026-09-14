@@ -4,23 +4,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>C-World</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style1.css">
 </head>
 <body>
-    <section id="section1">
-        <img src="5.jpg" alt="Image 1">
+    <h1>CETTE PAGE EST RÉSERVÉE <br> à <br><i>Crayola♡</i></h1>
+    <br>
+    <section id="auth">
+         <h1>Es-tu Crayola?</h1>
+         <input type="checkbox" id="oui" name="yesbox" value="OUI">
+         <label for="oui">♡ OUI, C'EST MOI</label>
+         <input type="checkbox" id="non" name="nobox" value="NON">
+         <label for="non">✦ NON, JE SUIS UN INTRUS</label>
     </section>
-    <section id="section2">
-        <img src="4.jpg" alt="Image 2">
+
+    <section id="mdp" style="display: none;">
+        <input type="text" placeholder="Entrez le mot de passe">
+        <button type="submit" id="submit">Soumettre</button>
     </section>
-    <section id="section3">
-        <img src="3.jpg" alt="Image 3"> 
+    <section id="bayo" style="display: none;">
+        <p>Alors dégage?!</p>
     </section>
-    <section id="section4">
-        <img src="2.jpg" alt="Image 4">
-    </section>
-    <section id="section5">
-        <img src="1.jpg" alt="Image 5"> 
-    </section>
-</body>
+<script>
+    const ouiCheckbox = document.getElementById("oui");
+    const nonCheckbox = document.getElementById("non");
+    const mdp = document.getElementById("mdp");
+    const submit = document.getElementById("submit");
+
+    function appliquerEtatChecked(checkboxSelectionnee) {
+        ouiCheckbox.checked = checkboxSelectionnee === ouiCheckbox;
+        nonCheckbox.checked = checkboxSelectionnee === nonCheckbox;
+
+        if (checkboxSelectionnee === ouiCheckbox) {
+            mdp.style.display = "block";
+            document.getElementById("bayo").style.display = "none";
+            localStorage.setItem("choix", "oui");
+        } else {
+            mdp.style.display = "none";
+            document.getElementById("bayo").style.display = "block";
+
+            if (checkboxSelectionnee === nonCheckbox) {
+                localStorage.setItem("choix", "non");
+            } else {
+                localStorage.removeItem("choix");
+            }
+        }
+    }
+
+    ouiCheckbox.addEventListener("change", () => {
+        appliquerEtatChecked(ouiCheckbox.checked ? ouiCheckbox : null);
+    });
+
+    nonCheckbox.addEventListener("change", () => {
+        appliquerEtatChecked(nonCheckbox.checked ? nonCheckbox : null);
+    });
+
+    const choixSauvegarde = localStorage.getItem("choix");
+
+    if (choixSauvegarde === "oui") {
+        appliquerEtatChecked(ouiCheckbox);
+    } else if (choixSauvegarde === "non") {
+        appliquerEtatChecked(nonCheckbox);
+    }
+
+    submit.addEventListener("click", () => {
+        if (ouiCheckbox.checked) {
+            const motDePasse = mdp.querySelector("input").value;
+            if (motDePasse === "crayola2007") {
+                window.location.href = "page.html";
+            } else {
+                alert("Mot de passe incorrect !");
+            }
+        } else if (nonCheckbox.checked) {
+            alert("Accès refusé !");
+        }
+    });
+</script>
 </html>
