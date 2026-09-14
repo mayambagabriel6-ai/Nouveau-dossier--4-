@@ -1,4 +1,133 @@
-body{
+  {box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 30px 16px;
+    overflow-x: hidden;
+    background: radial-gradient(circle, #90a2f2, #71b1f5);
+    color: rgb(39, 30, 97);
+    font-family: serif;
+    text-align: center;
+}
+
+h1 {
+    margin: 30px auto 50px;
+    padding: 0;
+    max-width: 1000px;
+    font-size: clamp(2.2rem, 8vw, 7.5rem);
+    line-height: 1.15;
+}
+
+h1 i {
+    font-size: clamp(2.8rem, 10vw, 9rem);
+}
+
+#auth {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    padding: 0;
+}
+
+#auth h1 {
+    margin: 0 0 20px;
+    font-size: clamp(2rem, 6vw, 5rem);
+}
+
+#auth label {
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 10px;
+    font-size: clamp(1.3rem, 4vw, 4rem);
+    cursor: pointer;
+}
+
+input[type="checkbox"] {
+    flex: 0 0 auto;
+    width: clamp(25px, 5vw, 60px);
+    height: clamp(25px, 5vw, 60px);
+    margin: 0;
+    accent-color: rgb(107, 197, 239);
+    cursor: pointer;
+}
+
+#mdp {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    width: 100%;
+    margin-top: 40px;
+}
+
+#mdp input[type="text"] {
+    width: min(90%, 700px);
+    height: clamp(60px, 10vw, 120px);
+    margin: 0;
+    padding: 10px 20px;
+    border: 4px solid #7282c6;
+    border-radius: 70px;
+    background-color: rgb(177, 211, 227);
+    color: #7282c6;
+    font-size: clamp(1.1rem, 3.5vw, 3.3rem);
+    font-family: serif;
+    text-align: center;
+}
+
+button[type="submit"] {
+    width: min(80%, 400px);
+    display: flex;
+    text-align: center;
+    align-items: center;
+    width: min(80%, 400px);
+    height: clamp(55px, 9vw, 100px);
+    margin: 20px auto;
+    padding: 10px 30px;
+    gap: 20px;
+    border: 4px solid #7282c6;
+    border-radius: 50px;
+    background-color: #8571ce;
+    color: #373e5e;
+    font-size: clamp(1.2rem, 3vw, 2.5rem);
+    font-weight: bold;
+    font-family: serif;
+    cursor: pointer;
+}
+
+input[type="text"]:focus,
+button[type="submit"]:focus,
+button[type="submit"]:hover {
+    outline: none;
+    border-color: #5e6dae;
+    box-shadow: 0 0 10px #626fac;
+}
+
+#bayo p {
+    margin: 50px 0;
+    padding: 0;
+    font-size: clamp(2.5rem, 10vw, 10rem);
+}
+
+@media (max-width: 500px) {
+    body {
+        padding: 20px 10px;
+    }
+
+    #auth label {
+        gap: 10px;
+        font-size: 1.25rem;
+    }
+}
+
+/*body{
     margin-top:100px;
     padding:40px 20px;
     background: radial-gradient(circle, #90a2f2, #71b1f5);
